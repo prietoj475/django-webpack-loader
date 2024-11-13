@@ -129,6 +129,8 @@ class WebpackLoader:
                         "Cannot resolve bundle {0}.".format(bundle_name)
                     )
 
+            if not chunks:
+                return self.filter_chunks(chunks)
             filtered_chunks = self.filter_chunks(chunks)
 
             for chunk in filtered_chunks:
